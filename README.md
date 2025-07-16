@@ -99,6 +99,9 @@ python run main.py
 - Custom focus areas
 - Role-specific adaptations
 
+## Live Link 
+- https://insightreel-jjwb7htrcsurhnaduus75k.streamlit.app/
+
 ## 🔒 Limitations
 
 - Maximum video length: 2 hours
