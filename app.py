@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 # Page config
 st.set_page_config(
-    page_title="InsightReel - YouTube Summarizer",
+    page_title="Insight - YouTube Summarizer",
     page_icon="▶️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -1471,7 +1471,7 @@ def render_header():
         <div class="logo-container">
             <div class="logo">
                 <span class="logo-icon">▶️</span>
-                SummarizeAI
+                InsightReel - YouTube Summarizer
             </div>
             <div style="font-size: 0.9rem; color: #94a3b8;">
                 🚀 Enhanced & Fixed
