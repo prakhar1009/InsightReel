@@ -51,6 +51,65 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown("""
+<style>
+    /* Sidebar Toggle Button */
+    .sidebar-toggle {
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+        z-index: 99999;
+        padding: 0.5rem;
+        background: rgba(139, 92, 246, 0.2);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #f8fafc;
+    }
+    
+    .sidebar-toggle:hover {
+        background: rgba(139, 92, 246, 0.3);
+        transform: translateX(2px);
+    }
+    
+    [data-testid="stSidebar"] {
+        transition: all 0.3s ease;
+    }
+</style>
+
+<script>
+    // Add click event to toggle sidebar
+    window.addEventListener('load', function() {
+        const sidebarToggle = document.createElement('button');
+        sidebarToggle.className = 'sidebar-toggle';
+        sidebarToggle.innerHTML = '☰ Menu';
+        
+        sidebarToggle.addEventListener('click', function() {
+            const sidebar = document.querySelector('[data-testid="stSidebar"]');
+            const isOpen = !sidebar.style.width || sidebar.style.width !== '0px';
+            
+            if (isOpen) {
+                sidebar.style.width = '0px';
+                sidebar.style.opacity = '0';
+                sidebarToggle.innerHTML = '☰ Menu';
+            } else {
+                sidebar.style.width = '350px';
+                sidebar.style.opacity = '1';
+                sidebarToggle.innerHTML = '✕ Close';
+            }
+        });
+        
+        document.body.appendChild(sidebarToggle);
+    });
+</script>
+""", unsafe_allow_html=True)
+
 # Custom CSS for dark theme and modern design
 st.markdown("""
 <style>
