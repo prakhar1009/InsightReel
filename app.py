@@ -48,7 +48,7 @@ st.set_page_config(
     page_title="SummarizeAI - YouTube Video Summarizer",
     page_icon="▶️",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # Custom CSS for dark theme and modern design
