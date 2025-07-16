@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 # Page config
 st.set_page_config(
-    page_title="SummarizeAI - YouTube Video Summarizer",
+    page_title="InsightReel - YouTube Summarizer",
     page_icon="▶️",
     layout="wide",
     initial_sidebar_state="expanded"
