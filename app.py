@@ -80,6 +80,12 @@ st.markdown("""
     
     [data-testid="stSidebar"] {
         transition: all 0.3s ease;
+        width: 350px !important;
+    }
+    
+    [data-testid="stSidebar"].closed {
+        width: 0px !important;
+        margin-left: -350px !important;
     }
 </style>
 
@@ -90,17 +96,17 @@ st.markdown("""
         sidebarToggle.className = 'sidebar-toggle';
         sidebarToggle.innerHTML = '☰ Menu';
         
+        let sidebarOpen = true;
+        
         sidebarToggle.addEventListener('click', function() {
             const sidebar = document.querySelector('[data-testid="stSidebar"]');
-            const isOpen = !sidebar.style.width || sidebar.style.width !== '0px';
+            sidebarOpen = !sidebarOpen;
             
-            if (isOpen) {
-                sidebar.style.width = '0px';
-                sidebar.style.opacity = '0';
+            if (!sidebarOpen) {
+                sidebar.classList.add('closed');
                 sidebarToggle.innerHTML = '☰ Menu';
             } else {
-                sidebar.style.width = '350px';
-                sidebar.style.opacity = '1';
+                sidebar.classList.remove('closed');
                 sidebarToggle.innerHTML = '✕ Close';
             }
         });
@@ -1748,6 +1754,7 @@ def render_sidebar():
         if cache_info['exists']:
             st.markdown(f"""
             - **Files:** {cache_info['files']}
+
             - **Size:** {cache_info['size_mb']:.1f} MB
             - **Videos:** {cache_info['videos']}
             """)
