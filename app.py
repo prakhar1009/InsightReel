@@ -1471,7 +1471,7 @@ def render_header():
         <div class="logo-container">
             <div class="logo">
                 <span class="logo-icon">▶️</span>
-                SummarizeAI
+                InsightReel - YouTube Summarizer
             </div>
             <div style="font-size: 0.9rem; color: #94a3b8;">
                 🚀 Enhanced & Fixed
